@@ -15,14 +15,14 @@ function uptdateCountdown() {
   const diff = halloweenTime - present;
 
   const d = Math.floor(diff / 1000 / 60 / 60 / 24);
-  const h = Math.floor(diff / 1000 / 60 / 60);
-  const min = Math.floor(diff / 1000 / 60);
-  const sec = Math.floor(diff / 1000);
+  const h = Math.floor(diff / 1000 / 60 / 60) % 24; //this is the modulo operator wich gives us the remainding if the 24 divident
+  const min = Math.floor(diff / 1000 / 60) % 60;
+  const sec = Math.floor(diff / 1000) % 60;
 
   days.innerText = d;
-  hours.innerText = h;
-  minutes.innerText = min;
-  seconds.innerText = sec;
+  hours.innerText = h < 10 ? '0' + h : h;
+  minutes.innerText = min < 10 ? '0' + min : min;
+  seconds.innerText = sec < 10 ? '0' + sec : sec;
 }
 
 /* uptdateCountdown(); */
