@@ -17,11 +17,23 @@ body {
   margin: 0;
 }
 
+img {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  background-color: transparent;
+}
+
 .countdown {
   display: flex;
-  transform: scale(2);
+  transform: scale(0.8);
   justify-content: space-between;
   position: relative;
+  transition: transform 1s ease-out;
+}
+
+.countdown.show {
+  transform: scale(2);
 }
 
 body::after {
@@ -41,7 +53,18 @@ body * {
 
 h1 {
   font-size: 60px;
-  margin: -80px 0 40px;
+  margin: -150px 0 40px;
+}
+
+.year {
+  font-size: 250px;
+  z-index: -1;
+  opacity: 0.5;
+  letter-spacing: 1.3rem;
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .time {
